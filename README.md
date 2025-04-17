@@ -46,15 +46,41 @@ cd realtime-chat-backend
 npm install
 ```
 ---
-### 3. Run the server on localhost
+### 3. Add the `.env` file
+
+Before running the server, create a `.env` file in the root directory of the project. You can do this by:
+
+- **Copying the example file**:
+  ```bash
+  cp .env.example .env
+  ```
+- Or manually creating the .env file by copying the values from .env.example and filling in the required values, such as database credentials, port numbers, etc.
+---
+### 4. Run the server on localhost
 ```bash
 npm run dev
 ```
 ---
-### Run tests
+
+### 5. Run Migrations
+```bash
+npm run migrate
+## This will ensure you start from clean DB
+```
+---
+### 6. Seed the Database
+```bash
+npm run seed
+## This will generate a set of random users and messages in the database.
+```
+---
+### 7. Run tests
 ```bash
 npm run test
 ```
+---
+### 8. Frontend Repository
+- If you're also looking to integrate the frontend for this chat application, you can find the frontend repository here: [Realtime Chat Frontend](https://github.com/javedalikhan/realtime-chat-frontend)
 ---
 ### 📚 API Documentation
 ```bash

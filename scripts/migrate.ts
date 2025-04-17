@@ -27,6 +27,10 @@ const setupDatabase = async () => {
       );
     `);
 
+    // Performance indexes
+    await query(`CREATE INDEX idx_messages_user_id ON messages(user_id);`);
+    await query(`CREATE INDEX idx_messages_created_at ON messages(created_at);`);
+
     await query(`COMMIT`);
     logger.info('Database tables created with proper timezone support');
   } catch (error) {
