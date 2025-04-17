@@ -1,0 +1,14 @@
+<!-- test.html -->
+<script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+<script>
+  const socket = io('http://localhost:3001');
+  socket.on('connect', () => {
+    socket.emit('sendMessage', {
+      username: 'testuser',
+      content: 'Browser test2'
+    });
+  });
+  socket.on('newMessage', (msg) => {
+    console.log('Received message:', msg);
+  });
+</script>

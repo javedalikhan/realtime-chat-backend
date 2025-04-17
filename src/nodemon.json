@@ -1,0 +1,8 @@
+{
+    "watch": ["src"],
+    "ext": "ts,json",
+    "ignore": [
+      "public/swagger.json",
+      "**/*.spec.ts"          
+    ]
+  }
