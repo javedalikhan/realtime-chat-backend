@@ -163,7 +163,6 @@ realtime-chat-backend/
 ├── .gitignore
 ├── LICENSE
 ├── README.md
-├── docker-compose.yml
 ├── Dockerfile
 ├── jest.config.ts
 ├── package.json
@@ -178,6 +177,31 @@ realtime-chat-backend/
 
 ### Rate limit violations are logged and return appropriate HTTP responses.
 ```
+---
+
+## 🐳 Docker Support
+
+You can build and run the backend using Docker:
+
+```bash
+## Build Docker Image
+docker build -t realtime-chat-backend .
+
+
+## Run the Docker container
+docker run -p 3001:3001 --env-file .env realtime-chat-backend
+```
+---
+
+
+### 🏗 Infrastructure
+
+This project includes:
+
+- `dockerfile`: For building a production-ready backend container
+- `.dockerignore`: To exclude unnecessary files from Docker builds
+- GitHub Actions workflow (`.github/workflows/docker.yml`) for automatic builds and Docker pushes
+
 ---
 
 ## 🚀 Possible Enhancements

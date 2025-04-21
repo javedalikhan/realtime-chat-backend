@@ -1,5 +1,4 @@
-name: Build and Deploy Docker Image
-
+name: CI - Build & Push Docker Image
 on:
   push:
     branches:
@@ -37,19 +36,3 @@ jobs:
     - name: Push Docker image
       run: |
         docker push ${{ secrets.DOCKERHUB_USERNAME }}/realtime-chat-backend:${{ github.sha }}
-
-  deploy:
-    needs: build  # This ensures the deploy job runs only after the build job completes successfully
-    runs-on: ubuntu-latest
-
-    steps:
-    # Checkout the code
-    - name: Checkout repository
-      uses: actions/checkout@v2
-
-    # Deploy to your production server or cloud provider (e.g., AWS, DigitalOcean)
-    - name: Deploy to Server (Example)
-      run: |
-        # Use SSH or other deployment methods to deploy your Docker container to the server.
-        # Example command to deploy a Docker container (replace with your actual deployment process):
-        ssh -o StrictHostKeyChecking=no ${{ secrets.DEPLOY_USER }}@$${{ secrets.DEPLOY_SERVER }} "docker pull ${{ secrets.DOCKERHUB_USERNAME }}/realtime-chat-backend:${{ github.sha }} && docker run -d -p 3001:3001 ${{ secrets.DOCKERHUB_USERNAME }}/realtime-chat-backend:${{ github.sha }}"
