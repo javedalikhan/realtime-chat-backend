@@ -14,6 +14,10 @@ A production-ready, scalable backend service for a realtime chat application. Bu
 - 🌐 Swagger API documentation
 - 🧵 Modular, maintainable TypeScript architecture
 - 🐘 PostgreSQL
+- 🔄 GitHub Actions CI pipeline for automated testing and Docker builds
+- 📦 Docker support for containerized deployments
+
+
 
 ---
 
